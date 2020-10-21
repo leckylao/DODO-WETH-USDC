@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -11,7 +11,7 @@ dataSources:
       startBlock: 10616399
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.2
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
         - BuyBaseToken
@@ -31,6 +31,8 @@ dataSources:
       abis:
         - name: Contract
           file: ./abis/Contract.json
+        - name: ERC20
+          file: ./abis/ERC20.json
       eventHandlers:
         - event: BuyBaseToken(indexed address,uint256,uint256)
           handler: handleBuyBaseToken
